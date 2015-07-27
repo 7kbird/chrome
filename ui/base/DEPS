@@ -1,0 +1,15 @@
+include_rules = [
+  "+cc",
+  "-cc/blink",
+  "+grit/app_locale_settings.h",
+  "+grit/ui_strings.h",
+  "+grit/ui_unscaled_resources.h",
+  "+grit/webui_resources.h",
+  "+jni",
+  "+net",
+  "+skia/ext",
+  "+third_party/skia",
+  "+ui/events",
+  "+ui/gfx",
+  "+ui/resources/grit/ui_resources.h",
+]

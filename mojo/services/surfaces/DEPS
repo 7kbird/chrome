@@ -1,0 +1,7 @@
+include_rules = [
+  "+cc",
+  "-cc/blink",
+  "+mojo/cc",
+  "+mojo/services/gles2",
+  "+mojo/services/public",
+]

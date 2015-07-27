@@ -1,0 +1,42 @@
+# Copyright 2014 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//mojo/system.gni")
+
+# GYP version: mojo/mojo_services.gypi:mojo_network_service
+shared_library("network") {
+  output_name = "mojo_network_service"
+
+  deps = [
+    ":lib",
+    "//mojo/services/public/interfaces/network",
+  ]
+  deps += mojo_system_for_shared_library
+
+  sources = [ "main.cc" ]
+}
+
+# GYP version: mojo/mojo_services.gypi:mojo_network_service_lib
+source_set("lib") {
+  deps = [
+    "//base",
+    "//mojo/common",
+    "//mojo/environment:chromium",
+    "//mojo/public/cpp/application:chromium",
+    "//mojo/services/public/interfaces/network",
+    "//net",
+    "//url",
+  ]
+
+  sources = [
+    "cookie_store_impl.cc",
+    "cookie_store_impl.h",
+    "network_context.cc",
+    "network_context.h",
+    "network_service_impl.cc",
+    "network_service_impl.h",
+    "url_loader_impl.cc",
+    "url_loader_impl.h",
+  ]
+}
